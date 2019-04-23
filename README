@@ -1,0 +1,10 @@
+Demonstration of issue with type/classname resolution in cljc files in macro-compile phase.
+
+```
+clj --main cljs.main --compile hints.core --repl
+
+=> Exception in thread "main" clojure.lang.ExceptionInfo: failed compiling file:/Volumes/Disky/projects/cljc-hints/src/hints/core.cljc {:clojure.error/phase :compilation}
+.. Caused by: clojure.lang.ExceptionInfo: null
+.. Caused by: clojure.lang.ExceptionInfo: java.lang.IllegalArgumentException: Unable to resolve classname: t/MyType, compiling:(hints/core.cljc:5:1)
+.. Caused by: java.lang.IllegalArgumentException: Unable to resolve classname: t/MyType, compiling:(hints/core.cljc:5:1)
+```
